@@ -14,6 +14,11 @@ export const FlipWords = ({
 }) => {
   const [currentWord, setCurrentWord] = useState(words[0]);
   const [isAnimating, setIsAnimating] = useState<boolean>(false);
+  const [isMounted, setIsMounted] = useState(false);
+
+  useEffect(() => {
+    setIsMounted(true);
+  }, []);
 
   const startAnimation = useCallback(() => {
     const word = words[words.indexOf(currentWord) + 1] || words[0];
@@ -22,11 +27,19 @@ export const FlipWords = ({
   }, [currentWord, words]);
 
   useEffect(() => {
-    if (!isAnimating)
-      setTimeout(() => {
+    if (!isMounted) return;
+    
+    if (!isAnimating) {
+      const timeout = setTimeout(() => {
         startAnimation();
       }, duration);
-  }, [isAnimating, duration, startAnimation]);
+      return () => clearTimeout(timeout);
+    }
+  }, [isAnimating, duration, startAnimation, isMounted]);
+
+  if (!isMounted) {
+    return <span className={cn("inline-block text-yellow-200", className)}>{words[0]}</span>;
+  }
 
   return (
     <AnimatePresence
