@@ -69,12 +69,12 @@ export default function GlassNavbar({
 
   return (
     <nav
-      className={`fixed top-0 left-0 right-0 z-50 ${blurClasses[blurIntensity]} border-b border-white/20`}
+      className={`fixed top-0 left-0  right-0 z-50 ${blurClasses[blurIntensity]} border-b border-white/20`}
       style={{
         backgroundColor: getBackgroundColor(),
       }}
     >
-      <div className="max-w-7xl mx-24">
+      <div className="relative  mx-24 ">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <div className="flex items-center flex-row gap-10 ">
@@ -103,7 +103,7 @@ export default function GlassNavbar({
           </div>
 </div>
           {/* Right Side Actions */}
-          <div className="flex items-center space-x-4">
+          <div className="absolute right-0 flex items-center space-x-4">
             
             <Link href="/getin"><ShimmerButton shimmerSize="0.1rem" shimmerDuration="1.5s"  className="px-4 py-2">
               <span className="text-sm font-medium">Sign in / Sign up</span>
