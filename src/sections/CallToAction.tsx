@@ -50,7 +50,7 @@ export const CallToAction = () => {
           className="text-center mb-16"
         >
           <h2 className={`${bigShoulders.className} text-4xl md:text-6xl text-white font-bold`}>
-            All hail <span className="text-[#f0f810]">.NET</span>
+            All hail the <span className="text-[#f0f810]">BOB .NET</span>
           </h2>
         </motion.div>
 

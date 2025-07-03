@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { Analytics } from '@vercel/analytics/next';
 import { Inter,Big_Shoulders_Display } from "next/font/google";
 import "./globals.css";
 
@@ -9,7 +10,7 @@ const bigShoulders = Big_Shoulders_Display({
 })
 export const metadata: Metadata = {
   title: "MonkeyCoder",
-  description: "A landing page for an AI startup created with Frontend Tribe",
+  description: "SunnyV5 is a stealthy AI-powered code assistant designed for coding practices and interview helper. It operates in two intelligent modes—Coding Exam Mode and Technical Interview Mode—providing real-time code generation or concept assistance. With built-in invisibility features, it remains undetectable during proctored or shared sessions.",
 };
 
 export default function RootLayout({
@@ -19,7 +20,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body className={inter.className}>{children}
+      <Analytics />
+      </body>
     </html>
   );
 }

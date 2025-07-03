@@ -3,7 +3,7 @@
 import { motion } from "framer-motion"
 import { Big_Shoulders_Display } from "next/font/google"
 import { Mail, Phone, MapPin, Github, Twitter, Linkedin, Instagram } from "lucide-react"
-
+import Link from "next/link"
 const bigShoulders = Big_Shoulders_Display({
   weight: ["400", "700", "900"],
   subsets: ["latin"],
@@ -11,7 +11,7 @@ const bigShoulders = Big_Shoulders_Display({
 
 export const Footer = () => {
   const currentYear = new Date().getFullYear()
-
+ 
   return (
     <footer className="bg-black text-white mt-24">
       {/* Main Footer Content */}
@@ -36,15 +36,15 @@ export const Footer = () => {
             <div className="space-y-3">
               <div className="flex items-center gap-3">
                 <Mail className="w-5 h-5 text-[#f0f810]" />
-                <span className="text-gray-300">hello@techflow.dev</span>
+                <span className="text-gray-300">inkacompany@petale.cum</span>
               </div>
               <div className="flex items-center gap-3">
                 <Phone className="w-5 h-5 text-[#f0f810]" />
-                <span className="text-gray-300">+1 (555) 123-4567</span>
+                <span className="text-gray-300"></span>
               </div>
               <div className="flex items-center gap-3">
                 <MapPin className="w-5 h-5 text-[#f0f810]" />
-                <span className="text-gray-300">San Francisco, CA</span>
+                <span className="text-gray-300">Stanford , California</span>
               </div>
             </div>
           </motion.div>
@@ -58,16 +58,26 @@ export const Footer = () => {
           >
             <h4 className={`${bigShoulders.className} text-xl font-bold text-[#f0f810]`}>Quick Links</h4>
             <ul className="space-y-3">
-              {["About Us", "Services", "Portfolio", "Blog", "Careers", "Contact"].map((link) => (
-                <li key={link}>
-                  <a
-                    href="#"
+              
+                <li >
+                  <Link href="/about"
+                   
                     className="text-gray-300 hover:text-[#f0f810] transition-colors duration-300 hover:underline"
                   >
-                    {link}
-                  </a>
+                   About
+                  </Link>
+                  
+                 
                 </li>
-              ))}
+                <li>
+                   <Link href="/contact"
+                   
+                    className="text-gray-300 hover:text-[#f0f810] transition-colors duration-300 hover:underline"
+                  >
+                   Contact
+                  </Link>
+                </li>
+              
             </ul>
           </motion.div>
 
@@ -103,47 +113,18 @@ export const Footer = () => {
             className="space-y-6"
           >
             <h4 className={`${bigShoulders.className} text-xl font-bold text-[#f0f810]`}>Stay Updated</h4>
-            <p className="text-gray-400">Subscribe to our newsletter for the latest updates and insights.</p>
+            <p className="text-gray-400">Please visit the website for regular updates</p>
 
             <div className="space-y-4">
               <div className="flex flex-col sm:flex-row gap-3">
-                <input
-                  type="email"
-                  placeholder="Enter your email"
-                  className="flex-1 px-4 py-3 bg-gray-900 border border-gray-700 rounded-lg text-white placeholder-gray-500 focus:outline-none focus:border-[#f0f810] transition-colors duration-300"
-                />
-                <motion.button
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                  className="px-6 py-3 bg-[#f0f810] text-black font-semibold rounded-lg hover:bg-[#e8e608] transition-colors duration-300"
-                >
-                  Subscribe
-                </motion.button>
+                
+               
               </div>
             </div>
 
             {/* Social Media */}
-            <div className="space-y-4">
-              <h5 className={`${bigShoulders.className} text-lg font-bold text-white`}>Follow Us</h5>
-              <div className="flex gap-4">
-                {[
-                  { icon: Github, href: "#" },
-                  { icon: Twitter, href: "#" },
-                  { icon: Linkedin, href: "#" },
-                  { icon: Instagram, href: "#" },
-                ].map(({ icon: Icon, href }, index) => (
-                  <motion.a
-                    key={index}
-                    href={href}
-                    whileHover={{ scale: 1.1, y: -2 }}
-                    whileTap={{ scale: 0.95 }}
-                    className="w-10 h-10 bg-gray-900 rounded-lg flex items-center justify-center text-gray-400 hover:text-[#f0f810] hover:bg-gray-800 transition-all duration-300"
-                  >
-                    <Icon className="w-5 h-5" />
-                  </motion.a>
-                ))}
-              </div>
-            </div>
+            
+            
           </motion.div>
         </div>
       </div>
@@ -158,7 +139,7 @@ export const Footer = () => {
         <div className="container mx-auto px-6 py-6">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
             <p className="text-gray-400 text-center md:text-left">
-              © {currentYear} <span className="text-[#f0f810] font-semibold">TechFlow</span>. All rights reserved.
+              © {currentYear} <span className="text-[#f0f810] font-semibold">MonkeyCoder</span>. All rights reserved.
             </p>
 
             <div className="flex flex-wrap gap-6 text-sm">

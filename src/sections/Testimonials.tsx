@@ -23,43 +23,64 @@ interface PlatformItem {
 const platforms: PlatformItem[] = [
   {
     id: "1",
-    number: "002",
+    number: "001",
     name: "Hackerrank",
     icon: "/placeholder.svg?height=24&width=24",
     status: "Undetectable",
   },
   {
     id: "2",
-    number: "003",
+    number: "002",
     name: "Codesignal",
     icon: "/placeholder.svg?height=24&width=24",
     status: "Undetectable",
   },
   {
     id: "3",
-    number: "004",
-    name: "CoderPad",
+    number: "003",
+    name: "Unstop",
     icon: "/placeholder.svg?height=24&width=24",
     status: "Undetectable",
   },
   {
     id: "4",
-    number: "005",
+    number: "004",
     name: "Chime",
     icon: "/placeholder.svg?height=24&width=24",
-    status: "Conditional",
+    status: "Undetectable",
   },
   {
     id: "5",
-    number: "006",
+    number: "005",
     name: "Microsoft Teams",
     icon: "/placeholder.svg?height=24&width=24",
     status: "Undetectable",
   },
   {
     id: "6",
-    number: "007",
+    number: "006",
     name: "Google Meet",
+    icon: "/placeholder.svg?height=24&width=24",
+    status: "Undetectable",
+  },
+  {
+    id: "6",
+    number: "007",
+    name: "PearsonVUE",
+    icon: "/placeholder.svg?height=24&width=24",
+    status: "Conditional",
+  },
+  {
+    id: "7",
+    number: "008",
+    name: "Myanatomy",
+    icon: "/placeholder.svg?height=24&width=24",
+    status: "Undetectable",
+  },
+  {
+    id: "8",
+    number: "009",
+    name: "Mattel",
     icon: "/placeholder.svg?height=24&width=24",
     status: "Undetectable",
   },
@@ -130,7 +151,7 @@ export default function PlatformDashboard() {
         {/* Header Bar */}
         <div className="relative w-full max-w-[600px] mx-auto h-[60px]">
           {/* Left animated bar */}
-          <div className="absolute left-0 top-[30px] w-[40%] sm:w-[200px] overflow-hidden rounded-full">
+          <div className="absolute left-0 top-[30px] w-[60%] sm:w-[110px]   overflow-hidden rounded-full">
             <motion.div
               className="w-full h-[3px] bg-gradient-to-l from-[#FFFF00] to-transparent"
               initial={{ x: "-100%" }}
@@ -140,7 +161,7 @@ export default function PlatformDashboard() {
           </div>
 
           {/* Right animated bar */}
-          <div className="absolute right-0 top-[30px] w-[40%] sm:w-[200px] overflow-hidden rounded-full">
+          <div className="absolute right-0 top-[30px] w-[60%] sm:w-[110px]   overflow-hidden rounded-full">
             <motion.div
               className="w-full h-[3px] bg-gradient-to-r from-[#FFFF00] to-transparent"
               initial={{ x: "100%" }}
@@ -172,8 +193,8 @@ export default function PlatformDashboard() {
         
       </section>
 <div className="mt-14 text-center ">
-              <h1 className="text-white text-[2.7rem] font-semibold">Does it <span className="text-[#FFFF00] italic">work</span> and is it detectable?</h1>
-              <p className="text-white font-sans text-[1.2rem] mt-7 font-normal px-6 max-w-3xl mx-auto">
+              <h1 className="text-white md:text-[2.7rem] text-[2rem] font-semibold">Does it <span className="text-[#FFFF00] italic">work</span> and is it detectable?</h1>
+              <p className="text-white font-sans text-[1rem] mt-7 font-normal px-6 max-w-xl mx-auto">
                 <span className="text-[#FFFF00] italic">Na modda</span> bhi kanipiyadu. I have tested it on all the
                 proctoring platforms and test environments — AI can&#39;t detect anything. So don&#39;t worry, it is safe.
               </p>
@@ -192,13 +213,7 @@ export default function PlatformDashboard() {
                     <div className="flex items-center space-x-4">
                       <span className="text-gray-500 font-mono text-sm w-8">{platform.number}</span>
                       <div className="w-6 h-6 flex-shrink-0">
-                        <Image
-                          src={platform.icon || "/placeholder.svg"}
-                          alt={`${platform.name} icon`}
-                          width={24}
-                          height={24}
-                          className="w-full h-full object-contain"
-                        />
+                       
                       </div>
                       <span className="text-white font-medium text-base">{platform.name}</span>
                     </div>
@@ -270,13 +285,11 @@ export default function PlatformDashboard() {
 
           {/* Warning Message */}
           <div className="px-6 py-4 border-t border-gray-800">
-            <p className="text-gray-400 text-sm leading-relaxed">
-              <span className="text-[#f0f810] font-medium">Warning:</span> Some MacOS versions are experiencing a
-              WebRTC issue that breaks Interview Coder. If you&#39;re on MacOS, please{" "}
-              <span className="text-blue-400 underline cursor-pointer hover:text-blue-300">
-                make sure you opt out of basic checks
-              </span>{" "}
-              to make sure you&#39;re good to go.
+            <p className="text-gray-400 text-lg text-center leading-relaxed">
+              <span className="text-[#f0f810] ">Warning:</span> {" "}
+              MacOS version is still under development
+              {" "}
+            
             </p>
           </div>
         </div>
